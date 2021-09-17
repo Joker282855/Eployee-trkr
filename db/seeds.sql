@@ -1,7 +1,7 @@
 INSERT INTO department (name)
 VALUES
     ('Management'),
-    ('Customer Service'),
+    (''),
     ('Technician'),
     ('Janitorial');
 
@@ -11,17 +11,17 @@ VALUES
     ('Vice President', '100,025.50', 1),
     ('Marketing Manager', '75,000.23', 1),
     ('Chief Financial Officer', '70,000.34', 1)
-    ('Customer Service Representative', '26,188.75', 2),
-    ('Customer Service Representative', '26,188.75', 2),
-    ('Customer Service Representative', '26,188.75', 2),
-    ('Customer Service Respresentative', '26,188.75', 2),
-    ('Customer Service Representative', '26,188.75', 2),
+    ('Receipitonist', '26,188.75', 2),
+    ('', '26,188.75', 2),
+    ('', '26,188.75', 2),
+    ('', '26,188.75', 2),
+    ('', '26,188.75', 2),
     ('Computer Programmer', '40,234.35', 3),
     ('MIT Technician', '45,346.75', 3),
     ('Television Programmer', '42,456.45', 3),
     ('Janitor', '25,738.23', 4),
-    ('Janitor', '25,738.36', 4),
-    ('Janitor', '25738.36', 4);
+    ('Janitor Assistant', '25,738.36', 4),
+    ('Night Shift Janitor', '25738.36', 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES 
@@ -41,4 +41,3 @@ VALUES
     ('Stephany', 'Berge', 14, 13),
     ('Austin', 'Birtrum', 15, 13);
 
-    
