@@ -5,3 +5,18 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.json({
+        message: 'How ya doing'
+    });
+});
+
+app.use((req, res) => {
+    res.status(404).end();
+})
+
+app.listen(PORT, () => {
+    console.log('Employee viewer is up and running')
+});
+
