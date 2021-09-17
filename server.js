@@ -1,4 +1,5 @@
 const express = require('express');
+const mysql = require('mysql2');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -6,10 +7,18 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'How ya doing'
-    });
+const db = mysql.createConnection(
+    {
+        host: 'localhost',
+        user: 'root',
+        password: 'Coderrocks12!',
+        database: 'tracker'
+    },
+    console.log('Now connected to the tracker database')
+);
+
+db.query(`SELECT * FROM department`, (err, rows) => {
+    console.log(rows);
 });
 
 app.use((req, res) => {
