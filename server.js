@@ -97,7 +97,7 @@ app.post('/api/role', ({ body }, res) => {
     }
     const sql = `INSERT INTO role (title, salary, department_id)
         VALUES (?,?,?)`;
-    const params = [body.tile, body.salary, body.department_id];
+    const params = [body.title, body.salary, body.department_id];
 
     db.query(sql, params, (err, result) => {
         if (err) {
@@ -133,7 +133,8 @@ app.post('/api/employee', ({ body }, res) => {
     });
 });
 
-// update an employee
+// update an employee role
+
 
 app.use((req, res) => {
     res.status(404).end();
