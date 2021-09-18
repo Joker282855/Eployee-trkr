@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const mysql = require('mysql2');
 
@@ -66,8 +67,24 @@ app.get('/api/employee', (req, res) => {
 });
 
 // add a department
-app.post('/api/department', ({ body}, res) => {
+app.post('/api/department', ({ body }, res) => {
     const errors = inputCheck(body, 'name');
+    if (errors) {
+        res.status(400).json({ errors: errors });
+    }
+});
+
+// add a role 
+app.post('/api/role', ({ body }, res) => {
+    const errors = inputCheck(body, 'title', 'salary', 'department_id');
+    if (errors) {
+        res.status(400).json({ errors: errors });
+    }
+});
+
+// add an employee
+app.post('/api/employee', ({ body }, res) => {
+    const errors = inputCheck(body, 'first_name', 'last_name', 'role_id', 'manager_id')
     if (errors) {
         res.status(400).json({ errors: errors });
     }
