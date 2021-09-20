@@ -26,18 +26,18 @@ VALUES
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES 
     ('Sarah', 'Warnick', 1, NULL),
-    ('Bethany', 'Crockston', 2, NULL),
-    ('David', 'Phillips', 3, NULL),
-    ('Joseph', 'Swenson', 4, NULL),
-    ('Archileta', 'David', 5, NULL),
-    ('Robert', 'Flakeson', 6, 5),
-    ('Jessica', 'Stevenson', 7, 5),
-    ('Tom', 'Hardy', 8, 5),
-    ('Brooke', 'Jones', 9, 5),
-    ('Audrey', 'Nielson', 10, 11),
-    ('Daniel', 'Grody', 11, NULL),
-    ('Ulysses', 'Grant', 12, 11),
-    ('Rebecca', 'Shcultz', 13, NULL),
-    ('Stephany', 'Berge', 14, 13),
-    ('Austin', 'Birtrum', 15, 13);
+    ('Bethany', 'Crockston', 2, 1),
+    ('David', 'Phillips', 3, 1),
+    ('Joseph', 'Swenson', 4, 1),
+    ('Archileta', 'David', 5, 1),
+    ('Robert', 'Flakeson', 6, 1),
+    ('Jessica', 'Stevenson', 7, 1),
+    ('Tom', 'Hardy', 8, 1),
+    ('Brooke', 'Jones', 9, 1),
+    ('Audrey', 'Nielson', 10, 1),
+    ('Daniel', 'Grody', 11, 1),
+    ('Ulysses', 'Grant', 12, 1),
+    ('Rebecca', 'Shcultz', 13, 1),
+    ('Stephany', 'Berge', 14, 1),
+    ('Austin', 'Birtrum', 15, 1);
 
