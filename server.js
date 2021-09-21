@@ -57,7 +57,11 @@ app.get('/api/role', (req, res) => {
 
 // view all employees
 app.get('/api/employee', (req, res) => {
-    const sql = `SELECT * FROM employee`;
+    const sql = `SELECT employee.*, role.title
+                AS role_title
+                FROM employee
+                LEFT JOIN role 
+                ON employee.role_id = role.id`;
 
     db.query(sql, (err, rows) => {
         if (err) {
