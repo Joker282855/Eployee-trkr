@@ -3,11 +3,18 @@ const db = require('./db/connection');
 const inputCheck = require('./utils/inputCheck');
 const inquirer = require('inquirer');
 
-// const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+inquirer.prompt([
+    {
+        type: 'input',
+        name: 'country',
+        message: 'What is your country'
+    }
+])
 
 // // view all the departments
 // app.get('/api/department', (req, res) => {
@@ -166,13 +173,3 @@ app.use(express.json());
 app.use((req, res) => {
     res.status(404).end();
 });
-
-// app.listen(PORT, () => {
-//     console.log('Employee viewer is up and running')
-// });
-
-inquirer.prompt([
-    {
-        
-    }
-])
