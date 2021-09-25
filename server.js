@@ -8,7 +8,7 @@ inquirer.prompt([
         type: 'list',
         name: 'track',
         message: 'What do you prefer to do?',
-        choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add and employee', 'update an employee']
+        choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee']
     }
 ])
 .then((answer) => {
@@ -179,6 +179,49 @@ inquirer.prompt([
                 const toral = new Employee(10, 'Robert', 'Sorensen', 'Head Janitor', 'Janitorial', 44568.65, 'NULL');
                 const tor = new Employee(11, 'Jorty', 'Ricter', 'Janitor', 'Janitorial', 41235.68, 'Robert Sorensen');
                 const carpet = new Employee(12, 'Byran', 'Hurtle', 'Carpet Cleaner', 'Janitorial', 25654.78, 'Robert Sorensen');
+
+                console.table(president, officer, plan, front, rep, meeting, loper, nerd, pro, toral, tor, carpet);
+            } 
+        })
+    } else if (answer.track === 'update an employee') {
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'employee',
+                message: 'Which employee do you want to update'
+
+            },
+            {
+                type: 'input',
+                name: 'new',
+                message: 'What is the employees new role'
+            }
+        ])
+        .then((answer) => {
+            if (answer.new === 'Product Design') {
+                function Employee(employee_id, first_name, last_name, job_title, department, salary, manager) {
+                    this.employee_id = employee_id
+                    this.first_name = first_name
+                    this.last_name = last_name
+                    this.job_title = job_title
+                    this.department = department
+                    this.salary = salary
+                    this.manager = manager
+                }
+                const president = new Employee(1, 'John', 'Smith', 'President', 'Management', 60567.89, 'NULL');
+                const officer = new Employee(2, 'Sarah', 'Robertson', 'Chief Financial Officer', 'Management', 56789.65, 'John Smith');
+                const plan = new Employee(3, 'Becky', 'Parkinson', 'Publicity Planner', 'Management', 56786.90, 'John Smith');
+                const front = new Employee(4, 'Hedy', 'Weeks', 'Receiptionist', 'Customer Interaction', 45678.89, 'Justin Jorgensen');
+                const rep = new Employee(5, 'Justin', 'Jorgensen', 'Customer Interaction Manager', 'Customer Interaction', 45678.90, 'NULL');
+                const meeting = new Employee(6, 'Becky', 'Moore', 'Social Planner', 'Customer Interaction', 44789.56, 'Justin Jorgensen');
+                const loper = new Employee(7, 'Ian', 'Horton', 'Mechanical Engineer', 'Technician', 41567.34, 'Morty Rickersen');
+                const nerd = new Employee(8, 'Morty', 'Rickersen', 'Head Engineer/Developer', 'Technician', 42544.34, 'NULL');
+                const pro = new Employee(9, 'Jessica', 'Stevenspn', 'Product Design', 'Technician', 39754.45, 'Morty Rickenrsen');
+                const toral = new Employee(10, 'Robert', 'Sorensen', 'Head Janitor', 'Janitorial', 44568.65, 'NULL');
+                const tor = new Employee(11, 'Jorty', 'Ricter', 'Janitor', 'Janitorial', 41235.68, 'Robert Sorensen');
+                const carpet = new Employee(12, 'Byran', 'Hurtle', 'Carpet Cleaner', 'Janitorial', 25654.78, 'Robert Sorensen');
+
+                console.table(president, officer, plan, front, rep, meeting, loper, nerd, pro, toral, tor, carpet);
             } 
         })
     }
