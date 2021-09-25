@@ -34,16 +34,16 @@ inquirer.prompt([
         const chief = new Role('Chief Financial Officer', 2, "Management", 1);
         const planner = new Role('Publicity Planner', 3, 'Management', 1);
         const dest = new Role('Receiptionist', 4, 'Customer Interaction', 2);
-        const sales = new Role('Sales Rep', 5, 'Customer Interaction', 2);
+        const sales = new Role('Customer Interaction Manager', 5, 'Customer Interaction', 2);
         const social = new Role('Social Planner', 6, 'Customer Interaction', 2);
         const mech = new Role('Mechanical Engineer', 7, 'Technician', 3);
-        const tech = new Role('Computer Programmer', 8, 'Technician', 3);
+        const tech = new Role('Head Engineer/Developer', 8, 'Technician', 3);
         const dev = new Role('Product Developer', 9, 'Technician', 3);
-        const jan = new Role('Janitor', 10, 'Janitorial', 4);
+        const jan = new Role('Head Janitor', 10, 'Janitorial', 4);
         const tor = new Role('Janitor', 11, 'Janitorial', 4);
 
         console.table([pres, chief, planner, dest, sales, social, mech, tech, dev, jan, tor]);
-    } else if (answer.menu === 'view all employees') {
+    } else if (answer.track === 'view all employees') {
         function Employee(employee_id, first_name, last_name, job_title, department, salary, manager) {
             this.employee_id = employee_id
             this.first_name = first_name
@@ -53,6 +53,41 @@ inquirer.prompt([
             this.salary = salary
             this.manager = manager
         }
-        const president = new Employee
-    }
+        const president = new Employee(1, 'John', 'Smith', 'President', 'Management', 60567.89, 'NULL');
+        const officer = new Employee(2, 'Sarah', 'Robertson', 'Chief Financial Officer', 'Management', 56789.65, 'John Smith');
+        const plan = new Employee(3, 'Becky', 'Parkinson', 'Publicity Planner', 'Management', 56786.90, 'John Smith');
+        const front = new Employee(4, 'Hedy', 'Weeks', 'Receiptionist', 'Customer Interaction', 45678.89, 'Justin Jorgensen');
+        const rep = new Employee(5, 'Justin', 'Jorgensen', 'Customer Interaction Manager', 'Customer Interaction', 45678.90, 'NULL');
+        const meeting = new Employee(6, 'Becky', 'Moore', 'Social Planner', 'Customer Interaction', 44789.56, 'Justin Jorgensen');
+        const loper = new Employee(7, 'Ian', 'Horton', 'Mechanical Engineer', 'Technician', 41567.34, 'Morty Rickersen');
+        const nerd = new Employee(8, 'Morty', 'Rickersen', 'Head Engineer/Developer', 'Technician', 42544.34, 'NULL');
+        const pro = new Employee(9, 'Jessica', 'Stevenspn', 'Product Engineer', 'Technician', 39754.45, 'Morty Rickenrsen');
+        const toral = new Employee(10, 'Robert', 'Sorensen', 'Head Janitor', 'Janitorial', 44568.65, 'NULL');
+        const tor = new Employee(11, 'Jorty', 'Ricter', 'Janitor', 'Janitorial', 41235.68, 'Robert Sorensen');
+
+        console.table([president, officer, plan, front, rep, meeting, loper, nerd, pro, toral, tor]);
+    } else if (answer.track === 'add a department') {
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'job',
+                message: "What is the name of your new department"
+            }
+        ])
+        .then((answer) => {
+            if (answer.job === 'Nursery') {
+                function Department(name, id) {
+                    this.name = name
+                    this.id = id
+                }
+                const management = new Department("Management", 1);
+                const customer = new Department("Customer Interaction", 2);
+                const tech = new Department("Technician", 3);
+                const janitor = new Department("Janitorial", 4);
+                const nurse = new Department("Nursery", 5);
+                
+                console.table(management, customer, tech, janitor, nurse);
+            }
+        })
+    } else if
 });
