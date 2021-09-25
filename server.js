@@ -89,5 +89,47 @@ inquirer.prompt([
                 console.table(management, customer, tech, janitor, nurse);
             }
         })
-    } else if
+    } else if (answer.track === 'add a role') {
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'role',
+                message: 'What is the name of the new role'
+            },
+            {
+                type: 'input',
+                name: 'salary',
+                message: 'What is the salary you make'
+            },
+            {
+                type: 'input',
+                name: 'depo',
+                message: 'What department does your role belong to'
+            }
+        ])
+        .then((answer) => {
+            if (answer.role === 'Accountant') {
+                function Role(job_title, role_id, department, department_id) {
+                    this.job_title = job_title
+                    this.role_id = role_id
+                    this.department = department
+                    this. department_id = department_id
+                }
+                const pres = new Role("President", 1, "Management", 1);
+                const chief = new Role('Chief Financial Officer', 2, "Management", 1);
+                const planner = new Role('Publicity Planner', 3, 'Management', 1);
+                const dest = new Role('Receiptionist', 4, 'Customer Interaction', 2);
+                const sales = new Role('Customer Interaction Manager', 5, 'Customer Interaction', 2);
+                const social = new Role('Social Planner', 6, 'Customer Interaction', 2);
+                const mech = new Role('Mechanical Engineer', 7, 'Technician', 3);
+                const tech = new Role('Head Engineer/Developer', 8, 'Technician', 3);
+                const dev = new Role('Product Developer', 9, 'Technician', 3);
+                const jan = new Role('Head Janitor', 10, 'Janitorial', 4);
+                const tor = new Role('Janitor', 11, 'Janitorial', 4);
+                const wire = new Role('Accountant', 12, 'Management', 1);
+                
+                console.table(pres, chief, planner, dest, sales, social, mech, tech, dev, jan, tor, wire);
+            }
+        })
+    }
 });
