@@ -17,10 +17,10 @@ The goal of this challenge was to connect to a sql database and then use the inq
 I reveiwed the module 12 lesson and looked up the documentation for the console.table package on web mdn docs. 
 
 # Future Development:
-What I need to work on for the future development of this challenge is connecting the actual database to the console.table package. To do this I am going to improve my google fu skills and find examples that can help me understand how to connect inquirer with console.table
+What I need to work on for the future development of this challenge is connecting the actual database to the console.table package. To do this I am going to improve my google fu skills and find examples that can help me understand how to connect inquirer with console.table. The other way I can imporve this application is modifying the inquirer code to make it so the user input that makes the tables show up does not have to be hardcoded
 
 # Link To Video
-<a href="">Link To Video</a>
+<a href="https://watch.screencastify.com/v/2gwTY3F0VpO7jqPJ9zZI">Link To Video</a>
 
 # Contributors:
 Made with love by Joshua Jackson
