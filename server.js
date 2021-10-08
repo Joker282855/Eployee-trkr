@@ -59,3 +59,12 @@ function menu(){
     })
 }
 
+function viewEmployee(){
+    db.query("select employee.id, employee.first_name, employee.last_name, role.title, manager.first_name as manager.first_name, manager.last_name as manager.last_name department.name as department from employee left join role on employee.role_id = role.id left join department on role.department_id = department.id left join employee.manager_id = manager.id", (err, data) => {
+        if (err) throw err
+        console.table(data)
+        menu()
+    })
+}
+
+menu();
