@@ -55,8 +55,6 @@ function menu(){
             case "updateAnEmployeeRole":
                 employeeUpdate()
                 break;
-            case "quit":
-                quit()
         }
     })
 };
@@ -69,6 +67,14 @@ function viewDepartment(){
     })
 };
 
+function viewRoles(){
+    db.query("select role.id, role.title, role.salary, department.name as department from role left join department on role.department_id = department.id", (err, data) => {
+        if (err) throw err
+        console.table(data)
+        menu()
+    })
+}
+
 function viewEmployee(){
     db.query("select employee.id, employee.first_name, employee.last_name, role.title, manager.first_name as manager_first, manager.last_name as manager_last, role.salary, department.name as department from employee left join role on employee.role_id = role.id left join department on role.department_id = department.id left join employee manager on employee.manager_id = manager.id", (err, data) => {
         if (err) throw err
@@ -76,5 +82,22 @@ function viewEmployee(){
         menu()
     })
 };
+
+function addDepartment(){
+    inquirer.prompt([{
+        type: 'input',
+        name: 'name',
+        message: "What is the name of the department you are adding"
+    }]).then(function(answer){
+        console.log(answer);
+        db.query("INSERT INTO department SET ?",{
+            name: answer.name
+        },function(error, data){
+            if (error) throw error
+            console.table(data)
+            menu()
+        })
+    })
+}
 
 menu();
