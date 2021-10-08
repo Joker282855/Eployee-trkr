@@ -119,6 +119,15 @@ function addRole(){
         }
     ]).then(function(answers){
         console.log(answers);
+        db.query("INSERT INTO role SET ?",{
+            title: answers.title,
+            salary: answers.salary,
+            department_id: answers.department_id
+        },function(err, data) {
+            if (err) throw err
+            console.table(data)
+            menu()            
+        })
     })
 }
 
