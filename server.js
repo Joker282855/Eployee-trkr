@@ -100,4 +100,26 @@ function addDepartment(){
     })
 }
 
+function addRole(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "title",
+            message: "What is the title of your new role"
+        },
+        {
+            type: "input",
+            name: "salary",
+            message: "What is your salary"
+        },
+        {
+            type: "input",
+            name: "department_id",
+            message: "What is your departments id"
+        }
+    ]).then(function(answers){
+        console.log(answers);
+    })
+}
+
 menu();
