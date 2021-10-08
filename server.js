@@ -55,16 +55,26 @@ function menu(){
             case "updateAnEmployeeRole":
                 employeeUpdate()
                 break;
+            case "quit":
+                quit()
         }
     })
-}
+};
 
-function viewEmployee(){
-    db.query("select employee.id, employee.first_name, employee.last_name, role.title, manager.first_name as manager.first_name, manager.last_name as manager.last_name department.name as department from employee left join role on employee.role_id = role.id left join department on role.department_id = department.id left join employee.manager_id = manager.id", (err, data) => {
+function viewDepartment(){
+    db.query("select department.id, department.name from department", (err, data) => {
         if (err) throw err
         console.table(data)
         menu()
     })
-}
+};
+
+function viewEmployee(){
+    db.query("select employee.id, employee.first_name, employee.last_name, role.title, manager.first_name as manager_first, manager.last_name as manager_last, role.salary, department.name as department from employee left join role on employee.role_id = role.id left join department on role.department_id = department.id left join employee manager on employee.manager_id = manager.id", (err, data) => {
+        if (err) throw err
+        console.table(data)
+        menu()
+    })
+};
 
 menu();
