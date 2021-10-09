@@ -168,4 +168,35 @@ function addEmployee(){
     })
 };
 
+function employeeUpdate(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "first_name",
+            message: "What is the first name of the employee you are updating" 
+        },
+        {
+            type: "input",
+            name: "last_name",
+            message: "What is the last name of the employee you are updating"
+        },
+        {
+            type: "input",
+            name: "role_id",
+            message: "What is the id associated with the new role the employee will receive"
+        }
+    ]).then(function(answers){
+        console.log(answers);
+        db.query("update employee set role_id = role.id where id = ?", {
+            first_name: answers.first_name,
+            last_name: answers.last_name,
+            role_id: answers.role_id
+        },function(err, data){
+            if (err) throw err
+            console.table(data)
+            menu()
+        })
+    })
+};
+
 menu();
