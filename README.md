@@ -17,7 +17,7 @@ The goal of this challenge was to connect to a sql database and then use the inq
 I reveiwed the module 12 lesson and looked up the documentation for the console.table package on web mdn docs. 
 
 # Link To Video
-<a href="https://watch.screencastify.com/v/2gwTY3F0VpO7jqPJ9zZI">Link To Video</a>
+<a href="https://watch.screencastify.com/v/QILozKZORSv0QhPIT7eg">Link To Video</a>
 
 # Contributors:
 Made with love by Joshua Jackson
