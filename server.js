@@ -187,7 +187,7 @@ function employeeUpdate(){
         }
     ]).then(function(answers){
         console.log(answers);
-        db.query("update employee set role_id = role.id where id = ?", {
+        db.query("UPDATE employee SET first_name = employee.first_name, last_name = employee.last_name role_id = role.id where id = ?", {
             first_name: answers.first_name,
             last_name: answers.last_name,
             role_id: answers.role_id
