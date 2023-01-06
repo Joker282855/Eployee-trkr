@@ -5,7 +5,7 @@ Employee Tracker
 The goal of this challenge was to connect to a sql database and then use the inquirer package along with the console.table package to show the database in the console. We had to build the applicaiton up from scratch without any starter code.
 
 # Assignment Tasks:
-1. When the application starts the inquirer package initiates and gives the user the options to view all departments, view all employees, view all roles, add a department, add a role, add an employee, and upadate an employee.
+1. When the application starts the inquirer package initiates and gives the user the options to view all departments, view all employees, view all roles, add a department, add a role, add an employee, and update an employee.
 2. When the client chooses to view all departments then the department table shows up in the console
 3. When the client chooses to view all roles then the role table shows up on the console
 4. When the client chooses to view all employees then the employee table shows up in the console
